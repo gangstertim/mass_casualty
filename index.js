@@ -8,6 +8,7 @@ const generateVictim = victim => {
 
 	let html = ''
 	html += `<h1>${victim.name}</h1>`
+        html += `<div><img src="https://placem.at/people?w=300&random=${victim.id}&txt=0" /></div>`
 	html += `<h2>Pulse: <span id="pulse">${victim.starting_pulse}</span></h2>`
 	html += `<h2>Symptoms: ${victim.symptoms}</h2>`
 	html += `<button onclick="${onSuccessfulIntervention}">Intervene Correctly!</button>`
@@ -26,7 +27,7 @@ blockspring.runParsed('query-public-google-spreadsheet',
 	res => { 
 		const data = res.params.data;
 		data.forEach(victim => {
-			app.get('/' + victim.victim_id, (req, res) => res.send(generateVictim(victim)))
+			app.get('/' + victim.id, (req, res) => res.send(generateVictim(victim)))
 		});
 	}
 );
