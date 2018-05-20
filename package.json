@@ -4,7 +4,8 @@
   "description": "mass casualty victim & vitals generator for nicholas miller",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
   },
   "author": "Tim Miller <tmiller@squarespace.com> (https://stash.nyc.squarespace.net/users/tmiller)",
   "license": "ISC",
