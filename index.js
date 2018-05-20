@@ -1,5 +1,7 @@
 const express = require('express')
 const blockspring = require('blockspring')
+const PORT = process.env.port || 5000
+
 const app = express()
 
 const generateVictim = victim => {
@@ -35,5 +37,5 @@ blockspring.runParsed('query-public-google-spreadsheet',
 
 app.get('/', (req, res) => res.send('App is running. Navigate to localhost:3000/victim_id'))
 
-app.listen(3000, () => console.log('Example app listening on port 3000!'))
+app.listen(PORT, () => console.log('Example app listening on port 5000!'))
 
